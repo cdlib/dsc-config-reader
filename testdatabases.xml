@@ -1,0 +1,16 @@
+<databases>
+  <database name="default">
+    <name>name1</name>
+    <user>user1</user>
+    <password>pass1</password>
+    <host>db.example.org</host>
+    <port>3333</port>
+  </database>
+  <database name="default-ro">
+    <name>name1ro</name>
+    <user>user1ro</user>
+    <password>pass1ro</password>
+    <host>db.example.org</host>
+    <port>3333</port>
+  </database>
+</databases>
