@@ -4,8 +4,10 @@
 # BSD License
 from __future__ import with_statement
 import xml.etree.ElementTree as ET
+import os
 
-CONFIG_FILE = '~/.databases.xml' #GET this from ENV?
+HOME = os.environ['HOME']
+CONFIG_FILE = HOME + '/.databases.xml' #GET this from ENV?
 
 def read_config(config_file=CONFIG_FILE):
     '''Read the config file and return a dictionary filled in with values
