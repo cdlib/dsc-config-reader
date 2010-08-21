@@ -22,18 +22,4 @@
 
   <xsl:output omit-xml-declaration="yes"/>
 
-  <!-- xsl:template match="/">
-<test>
-  <xsl:copy-of select="$databases"/>
-  <xsl:copy-of select="$db"/>
-A <xsl:value-of select="$sqlConnect.database"/>
-B <xsl:value-of select="$sqlConnect.user"/>
-C <xsl:value-of select="$sqlConnect.password"/>
-D <xsl:value-of select="$sqlConnect.driver"/>
-    <xsl:if test="not( 'a' = 'a')"> 
-        <xsl:message terminates="yes">XSLT test failed</xsl:message>
-    </xsl:if>
-</test>
-
-  </xsl:template -->
 </xsl:stylesheet>
