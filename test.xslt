@@ -2,6 +2,7 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   version="1.0">
 
+  <xsl:param name="database_config_file" select="'./testdatabases.xml'"/>
   <xsl:include href="./config_reader.xsl"/>
 
   <xsl:output omit-xml-declaration="yes"/>

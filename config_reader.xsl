@@ -2,7 +2,6 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   version="1.0">
 
-  <xsl:param name="database_config_file" select="'./testdatabases.xml'"/>
   <xsl:param name="database_name" select="'default-ro'"/>
 
   <xsl:variable name="databases" select="document($database_config_file)"/> 
