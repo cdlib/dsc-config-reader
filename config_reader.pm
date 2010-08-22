@@ -6,7 +6,8 @@ use XML::LibXML;
 sub read_config {
     my $config_file = @_[0] || "$ENV{'HOME'}/.databases.xml";
     my %config_hash = (); 
-    $dom = XML::LibXML->load_xml(location => $config_file);
+    my $parser = XML::LibXML->new();
+    my $dom = $parser->parse_file( $config_file );
     unless ( $dom->findvalue("/databases") ) {
         die "The XML format of the config file has changed. $config_file will need to be updated";
     }
