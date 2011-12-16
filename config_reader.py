@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 import os
 
 HOME = os.environ['HOME']
-CONFIG_FILE = HOME + '/.databases.xml' #GET this from ENV?
+CONFIG_FILE = os.environ.get('DATABASES_XML_FILE', HOME + '/.databases.xml')
 
 def read_config(config_file=CONFIG_FILE):
     '''Read the config file and return a dictionary filled in with values
