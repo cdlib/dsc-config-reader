@@ -6,16 +6,16 @@ from __future__ import with_statement
 import xml.etree.ElementTree as ET
 import os
 
-HOME = os.environ['HOME']
-CONFIG_FILE = os.environ.get('DATABASES_XML_FILE', HOME + '/.databases.xml')
-
-def read_config(config_file=CONFIG_FILE):
+def read_config(config_file=None):
     '''Read the config file and return a dictionary filled in with values
     
     >>> db = read_config("./testdatabases.xml")
     >>> print db
     {'default': {'ENGINE': 'django.db.backends.mysql', 'NAME': 'name1', 'HOST': 'db.example.org', 'USER': 'user1', 'PASSWORD': 'pass1', 'PORT': '3333'}, 'default-ro': {'ENGINE': 'django.db.backends.mysql', 'NAME': 'name1ro', 'HOST': 'db.example.org', 'USER': 'user1ro', 'PASSWORD': 'pass1ro', 'PORT': '3333'}}
     '''
+    if not config_file:
+        HOME = os.environ['HOME']
+        config_file = os.environ.get('DATABASES_XML_FILE', HOME + '/.databases.xml')
     with open(config_file, 'r') as f:
         etree = ET.parse(f)
     config_dict = {}
